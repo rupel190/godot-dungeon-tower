@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgvy5dra26637"]
+
+[ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Controller/Player.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" path="res://Dev/darkPurple.png" id="2_bo1nx"]
+
+[sub_resource type="Environment" id="Environment_bo1nx"]
+background_mode = 1
+background_color = Color(0.724417, 0.968295, 0.994489, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bo1nx"]
+height = 0.001
+radius = 18.705
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gbba"]
+albedo_texture = ExtResource("2_bo1nx")
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjgbg"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bo1nx")
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.795, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_bo1nx")
+debug_color = Color(0.784314, 0.419608, 0.305882, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 30, 0, -3.955, 0)
+material_override = SubResource("StandardMaterial3D_8gbba")
+mesh = SubResource("BoxMesh_jjgbg")
+
+[node name="DirectionalLight2D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.962166, -0.272465, 0, 0.272465, 0.962166, 0, 0, 0, 1, -5.91349, 10.3923, 0)
+light_color = Color(0.529472, 0.4895, 0.181079, 1)
