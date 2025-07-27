@@ -2,11 +2,11 @@ extends CharacterBody3D
 
 @onready var nav_agent:NavigationAgent3D = $NavAgent
 
-
+@onready var model:Node3D = $Model
 
 var max_pursuit_distance:float = 5
 
-var move_speed:float = 25
+var move_speed:float = 15
 var max_stamina:float = 10
 var stamina:float = max_stamina:
 	set(value):
@@ -29,11 +29,12 @@ func _ready() -> void:
 	main_tower = get_tree().get_first_node_in_group("MainTower")
 
 func _physics_process(delta: float) -> void:
+	
 	stamina -= delta
 	detect_player_touch()
 	find_way_to_target()
 	velocity = movement + get_gravity()
-	
+	model.global_basis = model.global_basis.slerp(model.global_basis.looking_at(Vector3(velocity.x,1,velocity.z),Vector3.UP,true),delta * 3)
 	move_and_slide()
 
 func find_way_to_target():
