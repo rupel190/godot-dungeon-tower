@@ -18,9 +18,7 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[node name="CanvasLayer" type="CanvasLayer"]
-
-[node name="SettingsContainer" type="MarginContainer" parent="." groups=["Settings"]]
+[node name="GameOver" type="MarginContainer" groups=["Settings"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,19 +26,22 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_f2hw3")
 
-[node name="Video" type="VBoxContainer" parent="SettingsContainer"]
+[node name="Hbox" type="VBoxContainer" parent="."]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 50
 
-[node name="CenterContainer" type="CenterContainer" parent="SettingsContainer/Video"]
+[node name="Center" type="CenterContainer" parent="Hbox"]
 layout_mode = 2
+mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/Video/CenterContainer"]
+[node name="Hbox" type="HBoxContainer" parent="Hbox/Center"]
 layout_mode = 2
 size_flags_vertical = 4
+mouse_filter = 2
 theme_override_constants/separation = 270
 
-[node name="Button" type="Button" parent="SettingsContainer/Video/CenterContainer/HBoxContainer" node_paths=PackedStringArray("shortcut_context")]
+[node name="Back" type="Button" parent="Hbox/Center/Hbox" node_paths=PackedStringArray("shortcut_context")]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -51,7 +52,7 @@ shortcut = SubResource("Shortcut_ljjvh")
 shortcut_in_tooltip = false
 text = "Back"
 
-[node name="Button2" type="Button" parent="SettingsContainer/Video/CenterContainer/HBoxContainer" node_paths=PackedStringArray("shortcut_context")]
+[node name="Restart" type="Button" parent="Hbox/Center/Hbox" node_paths=PackedStringArray("shortcut_context")]
 custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -62,21 +63,18 @@ shortcut = SubResource("Shortcut_ljjvh")
 shortcut_in_tooltip = false
 text = "Restart"
 
-[node name="ShadowPanel" type="PanelContainer" parent="SettingsContainer/Video"]
+[node name="TitlePanel" type="PanelContainer" parent="Hbox"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ppig")
 
-[node name="ShadowLabel" type="Label" parent="SettingsContainer/Video/ShadowPanel"]
+[node name="Title" type="Label" parent="Hbox/TitlePanel"]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_font_sizes/font_size = 150
 text = "Game over"
 
-[node name="Score" type="Label" parent="SettingsContainer/Video"]
+[node name="Score" type="Label" parent="Hbox"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 71
 text = "Score"
-
-[connection signal="pressed" from="SettingsContainer/Video/CenterContainer/HBoxContainer/Button" to="SettingsContainer" method="_on_button_pressed"]
-[connection signal="pressed" from="SettingsContainer/Video/CenterContainer/HBoxContainer/Button2" to="SettingsContainer" method="_on_button_pressed"]

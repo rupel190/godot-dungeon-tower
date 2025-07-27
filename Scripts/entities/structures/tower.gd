@@ -1,4 +1,4 @@
-extends CSGCylinder3D
+extends Node3D
 
 @export var spawn_pos = Vector3i.ZERO
 @export var map: Map

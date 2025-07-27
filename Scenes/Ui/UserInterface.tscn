@@ -1,6 +1,6 @@
 [gd_scene load_steps=45 format=3 uid="uid://b4mrqfvtlycnc"]
 
-[ext_resource type="Script" uid="uid://ck7ag4kyqmi2d" path="res://Scripts/ui/UserInterface.gd" id="1_pjpe8"]
+[ext_resource type="Script" uid="uid://ck7ag4kyqmi2d" path="res://Scripts/autoload/userinterface.gd" id="1_pjpe8"]
 [ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="2_rwlv8"]
 [ext_resource type="Script" uid="uid://bxgr4f0bimrms" path="res://Scripts/ui/Reticle.gd" id="3_hfmys"]
 [ext_resource type="Script" uid="uid://c25w3uxyctk2h" path="res://Scripts/ui/timer_enemy.gd" id="4_co5mk"]

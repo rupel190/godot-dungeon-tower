@@ -55,7 +55,7 @@ func find_way_to_target():
 		movement.y = 0
 	else:
 		current_entity_target = main_tower
-
+ 
 func detect_player_touch():
 	
 	if get_last_slide_collision() != null:
@@ -63,6 +63,7 @@ func detect_player_touch():
 		if last_slide_collision.is_in_group("Player"):
 			current_entity_target = last_slide_collision
 			print("Spooky enemy touched players butt")
+			
 			Gamemanager.gameover.emit("All the damage, player dead")
 
 

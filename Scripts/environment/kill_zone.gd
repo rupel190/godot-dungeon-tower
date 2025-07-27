@@ -8,4 +8,4 @@ func _ready() -> void:
 
 func on_body_entered(body:Node3D):
 	if body.is_in_group("Player"):
-		get_tree().change_scene_to_file("res://UserInterface/GameOver.tscn")
+		Gamemanager.gameover.emit("Player entered Killzone")
