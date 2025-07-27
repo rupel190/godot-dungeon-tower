@@ -14,6 +14,14 @@ config/name="godot-dungeon-tower"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "blue",
+"res://Scenes/": "yellow",
+"res://Scripts/": "pink"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
