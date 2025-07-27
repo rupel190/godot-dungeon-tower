@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://wdpe58j12hix"]
+
+[ext_resource type="MeshLibrary" uid="uid://b38wsrdqchlkx" path="res://Dev/Kota/terraintiles.meshlib" id="1_ontnc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kk0dh"]
+
+[node name="KotaExp" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.644769, 0.197247, -0.738489, 0, 0.966132, 0.25805, 0.764377, -0.166383, 0.622932, -8.75571, 5.73292, 7.55869)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_kk0dh")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="RigidBody3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.67041, -0.958637)
+light_color = Color(1, 0.803922, 0.419608, 1)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_ontnc")
+data = {
+"cells": PackedInt32Array(-1, 65535, 0, -1, 0, 0, -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65534, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65536, 65535, 0, -65536, 0, 0, -65535, 65534, 0, -65534, 65535, 0, -65534, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -2, 65534, 0, -2, 65535, 0, -2, 0, 0, -2, 1, 0, -1, 2, 0, -65536, 2, 0, -2, 2, 0, -65535, 2, 0, -65534, 2, 0, -3, 65534, 0, -3, 65535, 0, -3, 0, 0, -3, 1, 0, -3, 2, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)

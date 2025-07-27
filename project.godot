@@ -14,10 +14,6 @@ config/name="godot-dungeon-tower"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-UserPrefs="*res://Scripts/Autoload/UserPrefs.gd"
-
 [editor_plugins]
 
 enabled=PackedStringArray()
@@ -26,7 +22,6 @@ enabled=PackedStringArray()
 
 folder_colors={
 "res://Assets/": "blue",
-"res://Dev/": "orange",
 "res://Scenes/": "yellow",
 "res://Scripts/": "pink"
 }
