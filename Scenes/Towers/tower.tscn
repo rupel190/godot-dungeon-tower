@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bln6gessk1khq"]
+
+[ext_resource type="Script" uid="uid://c1w0nkvpfbq44" path="res://Scripts/tower.gd" id="1_d6h38"]
+[ext_resource type="Script" uid="uid://uj0imua33jhy" path="res://Scripts/random_spawn.gd" id="1_nh6md"]
+
+[node name="Tower" type="CSGCylinder3D"]
+script = ExtResource("1_d6h38")
+
+[node name="RandomSpawn" type="Node3D" parent="."]
+script = ExtResource("1_nh6md")
+spawn_devhint = "TowerSpawnDev"

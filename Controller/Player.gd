@@ -84,11 +84,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	$RandomSpawn.gridmap = map
-	
-	spawn_pos = $RandomSpawn._calc_player_spawn()
-	print("Setigingng spawn_pos: ", spawn_pos)
-	
-	
+	spawn_pos = $RandomSpawn._calc_random_spawn()
 	
 	# Whenever the player loads in, give the autoload ui a reference to itself.
 	UserInterface.update_player(self)

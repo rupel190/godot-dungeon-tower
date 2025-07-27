@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://wdpe58j12hix"]
+[gd_scene load_steps=13 format=3 uid="uid://wdpe58j12hix"]
 
 [ext_resource type="Script" uid="uid://cvhi47oskrh72" path="res://Scripts/Map.gd" id="1_klv4l"]
 [ext_resource type="MeshLibrary" uid="uid://ddj25eg343ud7" path="res://Data/MeshLibs/DungeonTiles.meshlib" id="1_s8fdk"]
 [ext_resource type="PackedScene" uid="uid://jrrxxna7wd6" path="res://Scenes/Environment/DarkEnv.tscn" id="2_klv4l"]
-[ext_resource type="PackedScene" path="res://Controller/Player.tscn" id="3_klv4l"]
+[ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Controller/Player.tscn" id="3_klv4l"]
 [ext_resource type="Script" path="res://Scripts/Killzone.gd" id="4_7elfi"]
-[ext_resource type="PackedScene" path="res://Controller/Enemy.tscn" id="4_p67k3"]
+[ext_resource type="PackedScene" uid="uid://bln6gessk1khq" path="res://Scenes/Towers/tower.tscn" id="4_oyb1s"]
+[ext_resource type="PackedScene" uid="uid://tl0m0tx16u3o" path="res://Controller/Enemy.tscn" id="4_p67k3"]
 [ext_resource type="PackedScene" uid="uid://ccuu5wpw1sfng" path="res://Scenes/Towers/MainTower.tscn" id="5_7eket"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_s8fdk"]
@@ -28,6 +29,14 @@ gridmap = NodePath("Navigation/GridMap")
 [node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_klv4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.15, 9)
 jump_height = 1.0
+map = NodePath("..")
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_p67k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 0)
+map = NodePath("..")
+
+[node name="Tower" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_oyb1s")]
+transform = Transform3D(1, 0, 0, 0, 23.7378, 0, 0, 0, 1, 0, 1.70802, 10.2053)
 map = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -101,9 +110,6 @@ script = ExtResource("4_7elfi")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Navigation/Killzone"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1, 0)
 shape = SubResource("WorldBoundaryShape3D_yjf5i")
-
-[node name="Enemy" parent="." instance=ExtResource("4_p67k3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, 0)
 
 [node name="MainTower" parent="." instance=ExtResource("5_7eket")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

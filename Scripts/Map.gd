@@ -11,9 +11,17 @@ var playerspawn = "PlayerSpawnDev"
 var enemyspawn = "EnemySpawnDev"
 
 @onready var player = $Player
+@onready var enemy = $Enemy
+@onready var tower = $Tower
 
 func _ready() -> void:
 	player.position = player.spawn_pos
+	enemy.position = enemy.spawn_pos
+	tower.position = tower.spawn_pos
+	
+	print("Player spawn: ", player.spawn_pos)
+	print("Enemy spawn: ", enemy.spawn_pos)
+	print("Tower spawn: ", tower.spawn_pos)
 	
 ## [param hintname] hint
 func find_gridmap_devhints(spawntype: String) -> int:
