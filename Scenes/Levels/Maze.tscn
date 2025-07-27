@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cvhi47oskrh72" path="res://Scripts/Map.gd" id="1_klv4l"]
 [ext_resource type="MeshLibrary" uid="uid://ddj25eg343ud7" path="res://Data/MeshLibs/DungeonTiles.meshlib" id="1_s8fdk"]
 [ext_resource type="PackedScene" uid="uid://jrrxxna7wd6" path="res://Scenes/Environment/DarkEnv.tscn" id="2_klv4l"]
-[ext_resource type="PackedScene" path="res://Controller/Player.tscn" id="3_klv4l"]
-[ext_resource type="Script" path="res://Scripts/Killzone.gd" id="4_7elfi"]
-[ext_resource type="PackedScene" path="res://Controller/Enemy.tscn" id="4_p67k3"]
+[ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Controller/Player.tscn" id="3_klv4l"]
+[ext_resource type="Script" uid="uid://2ka8htof3qff" path="res://Scripts/Killzone.gd" id="4_7elfi"]
+[ext_resource type="PackedScene" uid="uid://dspbed8csh564" path="res://Controller/Enemy.tscn" id="4_p67k3"]
 [ext_resource type="PackedScene" uid="uid://ccuu5wpw1sfng" path="res://Scenes/Towers/MainTower.tscn" id="5_7eket"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_s8fdk"]
@@ -21,9 +21,10 @@ plane = Plane(-1, 0, 0, 0)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yjf5i"]
 
-[node name="KotaExp" type="Node3D" node_paths=PackedStringArray("gridmap")]
+[node name="KotaExp" type="Node3D" node_paths=PackedStringArray("gridmap", "navmap")]
 script = ExtResource("1_klv4l")
 gridmap = NodePath("Navigation/GridMap")
+navmap = NodePath("Navigation")
 
 [node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_klv4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.15, 9)
