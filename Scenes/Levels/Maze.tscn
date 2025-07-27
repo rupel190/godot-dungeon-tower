@@ -18,8 +18,9 @@ plane = Plane(-1, 0, 0, 0)
 script = ExtResource("1_klv4l")
 gridmap = NodePath("Navigation/GridMap")
 
-[node name="Player" parent="." instance=ExtResource("3_klv4l")]
+[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_klv4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
+map = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.644769, 0.197247, -0.738489, 0, 0.966132, 0.25805, 0.764377, -0.166383, 0.622932, -8.75571, 5.73292, 7.55869)

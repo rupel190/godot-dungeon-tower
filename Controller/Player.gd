@@ -24,6 +24,10 @@ class_name Player
 ## How quickly to zoom the camera
 @export var zoom_sensitivity: float = 0.4
 
+@export var spawn_pos = Vector3i.ZERO
+@export var map: Map
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 # Stores the direction the player is trying to look this frame.
@@ -78,6 +82,14 @@ var zoom := min_zoom:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	$RandomSpawn.gridmap = map
+	
+	spawn_pos = $RandomSpawn._calc_player_spawn()
+	print("Setigingng spawn_pos: ", spawn_pos)
+	
+	
+	
 	# Whenever the player loads in, give the autoload ui a reference to itself.
 	UserInterface.update_player(self)
 
