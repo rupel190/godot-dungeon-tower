@@ -5,8 +5,9 @@ var spawn = Vector3.ZERO
 var gridmap: Map
 
 func _calc_random_spawn():
+	print("Calculating random spawn for: ", get_parent().name)
 	if !gridmap:
-		print("Random spawn requires gridmap to function!")
+		print("Random spawn requires gridmap to function!", get_parent().name)
 	var devhint = gridmap.find_gridmap_devhints(spawn_devhint)
 	var spawn_nodes = gridmap.find_cells(devhint)
 	var random_spawn = spawn_nodes.pick_random()

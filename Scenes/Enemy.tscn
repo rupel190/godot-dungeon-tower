@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://tl0m0tx16u3o"]
 
-[ext_resource type="Script" uid="uid://bbukiy2ug81qj" path="res://Scripts/Enemy.gd" id="1_b12jw"]
-[ext_resource type="Script" uid="uid://uj0imua33jhy" path="res://Scripts/random_spawn.gd" id="2_an0ys"]
-[ext_resource type="PackedScene" uid="uid://cc2dhpo4mej3x" path="res://Assets/Kotamade/Spook.blend" id="2_an0ys"]
+[ext_resource type="Script" uid="uid://bbukiy2ug81qj" path="res://Scripts/enemy.gd" id="1_b12jw"]
+[ext_resource type="Script" uid="uid://uj0imua33jhy" path="res://Scripts/properties/has_random_spawn.gd" id="2_an0ys"]
+[ext_resource type="PackedScene" uid="uid://cc2dhpo4mej3x" path="res://Assets/Kotamade/Spook.blend" id="3_hgo82"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b12jw"]
 radius = 0.7
@@ -25,7 +25,7 @@ debug_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 shape = SubResource("CapsuleShape3D_b12jw")
 
-[node name="Model" parent="." instance=ExtResource("2_an0ys")]
+[node name="Model" parent="." instance=ExtResource("3_hgo82")]
 
 [node name="Skeleton3D" parent="Model/Armature" index="0"]
 bones/0/rotation = Quaternion(0.00470702, 1.19164e-07, -0.0392568, 0.999218)

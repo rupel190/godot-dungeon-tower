@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1bbsmventa0"]
 
-[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://UserInterface/UITheme.tres" id="1_f2hw3"]
+[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="1_f2hw3"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_gbevd"]
 action = &"ui_cancel"

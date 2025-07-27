@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ij353qf6fdpf"
-path="res://.godot/imported/Staatliches-Regular.ttf-a85b07df7ee9487ae05f90710e601696.fontdata"
+path="res://.godot/imported/Staatliches-Regular.ttf-bd07a2302a1cef560d25c77551ede648.fontdata"
 
 [deps]
 
-source_file="res://UserInterface/Font/Staatliches-Regular.ttf"
-dest_files=["res://.godot/imported/Staatliches-Regular.ttf-a85b07df7ee9487ae05f90710e601696.fontdata"]
+source_file="res://Scenes/Ui/Theme/Font/Staatliches-Regular.ttf"
+dest_files=["res://.godot/imported/Staatliches-Regular.ttf-bd07a2302a1cef560d25c77551ede648.fontdata"]
 
 [params]
 

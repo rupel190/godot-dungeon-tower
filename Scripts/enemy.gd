@@ -2,12 +2,9 @@ extends CharacterBody3D
 
 @onready var nav_agent:NavigationAgent3D = $NavAgent
 
-<<<<<<< HEAD
 @export var spawn_pos = Vector3i.ZERO
 @export var map: Map
-=======
 @onready var model:Node3D = $Model
->>>>>>> features/enemy_model
 
 var max_pursuit_distance:float = 5
 

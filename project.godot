@@ -15,9 +15,13 @@ run/main_scene="uid://wdpe58j12hix"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
+
 [autoload]
 
-UserInterface="*res://UserInterface/UserInterface.tscn"
+UserInterface="*res://Scenes/Ui/UserInterface.tscn"
 Gamemanager="*res://Scripts/gamemanager.gd"
 
 [editor_plugins]

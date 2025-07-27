@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://sbl4rscivr8g"]
 
-[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://UserInterface/UITheme.tres" id="1_ga3o8"]
-[ext_resource type="Script" uid="uid://dlxnsldc4s72t" path="res://UserInterface/SettingsContainer.gd" id="2_yf2ij"]
+[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="1_ga3o8"]
+[ext_resource type="Script" uid="uid://dlxnsldc4s72t" path="res://Scripts/ui/SettingsContainer.gd" id="2_yf2ij"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cu3mp"]
 content_margin_left = 64.0
