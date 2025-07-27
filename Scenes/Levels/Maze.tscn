@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cvhi47oskrh72" path="res://Scripts/Map.gd" id="1_klv4l"]
 [ext_resource type="MeshLibrary" uid="uid://ddj25eg343ud7" path="res://Data/MeshLibs/DungeonTiles.meshlib" id="1_s8fdk"]
 [ext_resource type="PackedScene" uid="uid://jrrxxna7wd6" path="res://Scenes/Environment/DarkEnv.tscn" id="2_klv4l"]
-[ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Controller/Player.tscn" id="3_klv4l"]
-[ext_resource type="Script" uid="uid://2ka8htof3qff" path="res://Scripts/Killzone.gd" id="4_7elfi"]
-[ext_resource type="PackedScene" uid="uid://dspbed8csh564" path="res://Controller/Enemy.tscn" id="4_p67k3"]
+[ext_resource type="PackedScene" path="res://Controller/Player.tscn" id="3_klv4l"]
+[ext_resource type="Script" path="res://Scripts/Killzone.gd" id="4_7elfi"]
+[ext_resource type="PackedScene" path="res://Controller/Enemy.tscn" id="4_p67k3"]
 [ext_resource type="PackedScene" uid="uid://ccuu5wpw1sfng" path="res://Scenes/Towers/MainTower.tscn" id="5_7eket"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_s8fdk"]
@@ -25,12 +25,45 @@ plane = Plane(-1, 0, 0, 0)
 script = ExtResource("1_klv4l")
 gridmap = NodePath("Navigation/GridMap")
 
-[node name="Player" parent="." instance=ExtResource("3_klv4l")]
+[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_klv4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.15, 9)
 jump_height = 1.0
+map = NodePath("..")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.99999, -0.00435004, 3.46383e-06, 0, 0.000796274, 1, -0.00435005, -0.99999, 0.000796267, -2.73365, 55.5081, 1.3695)
+
+[node name="StaticLights" type="Node3D" parent="."]
+
+[node name="CentralLight" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.67041, -0.958637)
+light_color = Color(1, 0.803922, 0.419608, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="EnemyTunnelLeft" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.67041, 40.0414)
+light_color = Color(0.441667, 0.156305, 0.905561, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="EnemyTunnelRight" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.67041, -37.9586)
+light_color = Color(0.441667, 0.156305, 0.905561, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="EnemyTunnelDown" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 3.67041, 3.04136)
+light_color = Color(0.441667, 0.156305, 0.905561, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="EnemyTunnelUp" type="OmniLight3D" parent="StaticLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.67041, 1.04136)
+light_color = Color(0.441667, 0.156305, 0.905561, 1)
+light_energy = 2.371
+omni_range = 9.423
 
 [node name="Navigation" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_s8fdk")
