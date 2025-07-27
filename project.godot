@@ -14,6 +14,10 @@ config/name="godot-dungeon-tower"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/blender_helper/mesh_library/plugin.cfg", "res://addons/blender_helper/packed_scene/plugin.cfg")
+
 [file_customization]
 
 folder_colors={

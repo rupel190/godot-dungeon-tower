@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4lccs8l5darl"]
+
+[ext_resource type="Script" uid="uid://b4mlqk8j15pcf" path="res://addons/godot4.3_fps_character_controller/Player/PlayerLogic.gd" id="1_0ewp1"]
+[ext_resource type="Script" uid="uid://ts2o54oe6wpt" path="res://addons/godot4.3_fps_character_controller/Player/player_inetractcast_logic.gd" id="2_dpr1a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g5alh"]
+radius = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rjnwj"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("hands", "COLLIDER") groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 2
+script = ExtResource("1_0ewp1")
+InputDictionary = {
+"Backward": "Backward",
+"Escape": "Escape",
+"Forward": "Forward",
+"Interact": "interact",
+"Jump": "Jump",
+"Left": "Left",
+"Right": "Right",
+"Sprint": "Sprint"
+}
+hands = NodePath("")
+COLLIDER = NodePath("CollisionShape3D")
+metadata/water_splash_intensity = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_g5alh")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="PlayerInetractcast" type="ShapeCast3D" parent="Head" node_paths=PackedStringArray("interact_label")]
+shape = SubResource("SphereShape3D_rjnwj")
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 4294967295
+script = ExtResource("2_dpr1a")
+interact_label = NodePath("")
+metadata/water_splash_intensity = 10.0
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(0.999623, 0.0083339, -0.0261456, -0.00661269, 0.997848, 0.0652407, 0.026633, -0.0650432, 0.997527, 0.021819, 0.00456297, -0.003604)
+cull_mask = 524287
+fov = 120.0
+
+[node name="Tilt" type="Node3D" parent="."]
+
+[node name="LTilt" type="Marker3D" parent="Tilt"]
+
+[node name="RTilt" type="Marker3D" parent="Tilt"]
+
+[node name="WaterCol" type="MeshInstance3D" parent="."]
+layers = 524288
+
+[node name="FootstepAudio" type="Node3D" parent="."]
