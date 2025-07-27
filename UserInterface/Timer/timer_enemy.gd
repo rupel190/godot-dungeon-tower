@@ -21,7 +21,6 @@ func _ready():
 func _calc_animation_duration(): 
 	var animation_speed = speed_scale
 	var anim_name = 'default'
-	var sprite_frames : SpriteFrames = sprite_frames
 	var fps = sprite_frames.get_animation_speed(anim_name)
 	var allframes_duration = 0
 	var absolute_duration = 0
