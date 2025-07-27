@@ -59,6 +59,8 @@ func detect_player_touch():
 		var last_slide_collision:Node3D = get_last_slide_collision().get_collider()
 		if last_slide_collision.is_in_group("Player"):
 			current_entity_target = last_slide_collision
+			print("Spooky enemy touched players butt")
+			Gamemanager.gameover.emit("All the damage, player dead")
 
 
 

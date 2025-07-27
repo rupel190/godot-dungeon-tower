@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 UserInterface="*res://UserInterface/UserInterface.tscn"
+Gamemanager="*res://Scripts/gamemanager.gd"
 
 [editor_plugins]
 
