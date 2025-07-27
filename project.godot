@@ -22,7 +22,7 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 [autoload]
 
 UserInterface="*res://Scenes/Ui/UserInterface.tscn"
-Gamemanager="*res://Scripts/gamemanager.gd"
+Gamemanager="*res://Scripts/autoload/gamemanager.gd"
 
 [editor_plugins]
 
