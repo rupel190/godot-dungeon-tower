@@ -5,6 +5,7 @@ class_name Map
 
 @export var debug_hints:bool = false
 @export var gridmap:GridMap
+@export var navmap:NavigationRegion3D
 
 var towerspawn = "TowerSpawnDev"
 var playerspawn = "PlayerSpawnDev"
@@ -15,6 +16,7 @@ var enemyspawn = "EnemySpawnDev"
 @onready var tower = $Tower
 
 func _ready() -> void:
+	navmap.bake_navigation_mesh(true)
 	player.position = player.spawn_pos
 	enemy.position = enemy.spawn_pos
 	tower.position = tower.spawn_pos

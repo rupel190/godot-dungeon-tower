@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://ccuu5wpw1sfng"]
+[gd_scene load_steps=2 format=3 uid="uid://ccuu5wpw1sfng"]
+
+[ext_resource type="PackedScene" uid="uid://q7rn0ispdnua" path="res://Assets/Kotamade/MainTower.blend" id="1_ybr6q"]
 
 [node name="MainTower" type="Node3D" groups=["MainTower"]]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.7, 0)
-size = Vector3(4.9, 25, 6.4)
+[node name="MainTower" parent="." instance=ExtResource("1_ybr6q")]
