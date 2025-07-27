@@ -8,11 +8,11 @@ signal exit()
 @export var default_fov: float = 75
 
 @export_category("Mouse Sensitivity")
-@export var very_low_sens: float = 0.00025
-@export var low_sens: float = 0.0005
-@export var medium_sens: float = 0.00075
-@export var high_sens: float = 0.001
-@export var very_high_sens: float = 0.00125
+@export var very_low_sens: float = 0.00075
+@export var low_sens: float = 0.001
+@export var medium_sens: float = 0.0015
+@export var high_sens: float = 0.002
+@export var very_high_sens: float = 0.003
 
 # A reference to the player for maintaining settings.
 var _player: Player

@@ -221,6 +221,7 @@ stream_0/stream = ExtResource("4_0mhnh")
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 floor_max_angle = 0.872665
 script = ExtResource("1_12if5")
+mouse_sensitivity = 0.01
 
 [node name="BasePivot" type="Node3D" parent="."]
 transform = Transform3D(0.999403, -0.0341708, -0.00518501, 0.0345599, 0.989665, 0.139173, 0.000375782, -0.139269, 0.990255, 0, -1, 0)

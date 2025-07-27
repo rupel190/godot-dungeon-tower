@@ -2,21 +2,12 @@
 
 [ext_resource type="MeshLibrary" uid="uid://ddj25eg343ud7" path="res://Data/MeshLibs/DungeonTiles.meshlib" id="1_s8fdk"]
 [ext_resource type="PackedScene" uid="uid://jrrxxna7wd6" path="res://Scenes/Environment/DarkEnv.tscn" id="2_klv4l"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_kk0dh"]
+[ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Controller/Player.tscn" id="3_klv4l"]
 
 [node name="KotaExp" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.644769, 0.197247, -0.738489, 0, 0.966132, 0.25805, 0.764377, -0.166383, 0.622932, -8.75571, 5.73292, 7.55869)
-
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_kk0dh")
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="RigidBody3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -2)
@@ -59,3 +50,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.67041, 1.04136)
 light_color = Color(0.441667, 0.156305, 0.905561, 1)
 light_energy = 2.371
 omni_range = 9.423
+
+[node name="Player" parent="." instance=ExtResource("3_klv4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2223, 1.10004, 1.04951)
