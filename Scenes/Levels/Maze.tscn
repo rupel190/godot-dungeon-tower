@@ -115,7 +115,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 [node name="Static" type="Node3D" parent="Lights"]
 
 [node name="CentralLight" type="OmniLight3D" parent="Lights/Static"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.67041, -0.958637)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.67041, -4.95864)
+light_color = Color(1, 0.803922, 0.419608, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="CentralLight2" type="OmniLight3D" parent="Lights/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.67041, 5.04136)
+light_color = Color(1, 0.803922, 0.419608, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="CentralLight3" type="OmniLight3D" parent="Lights/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6.67041, 0.0413628)
+light_color = Color(1, 0.803922, 0.419608, 1)
+light_energy = 2.371
+omni_range = 9.423
+
+[node name="CentralLight4" type="OmniLight3D" parent="Lights/Static"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6.67041, 0.0413628)
 light_color = Color(1, 0.803922, 0.419608, 1)
 light_energy = 2.371
 omni_range = 9.423

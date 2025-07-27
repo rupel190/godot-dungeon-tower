@@ -8,11 +8,12 @@ var max_pursuit_distance:float = 5
 
 var move_speed:float = 15
 var max_stamina:float = 10
+var min_stamina:float = 2
 var stamina:float = max_stamina:
 	set(value):
 		
-		stamina = clamp(value,0,max_stamina)
-		if stamina <= 0:
+		stamina = clamp(value,min_stamina,max_stamina)
+		if stamina <= min_stamina:
 			stamina = max_stamina
 
 var current_entity_target:Node3D
@@ -34,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	detect_player_touch()
 	find_way_to_target()
 	velocity = movement + get_gravity()
-	model.global_basis = model.global_basis.slerp(model.global_basis.looking_at(Vector3(velocity.x,1,velocity.z),Vector3.UP,true),delta * 3)
+	model.global_basis = model.global_basis.slerp(model.global_basis.looking_at(get_real_velocity() + Vector3.ONE * 0.1,Vector3.UP,true),delta * 3)
 	move_and_slide()
 
 func find_way_to_target():
