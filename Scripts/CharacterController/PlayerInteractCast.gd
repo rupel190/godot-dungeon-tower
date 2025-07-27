@@ -1,4 +1,5 @@
 extends ShapeCast3D
+class_name PlayerInteractCast
 
 @export var interact_label : RichTextLabel
 var curr_dialogue : String

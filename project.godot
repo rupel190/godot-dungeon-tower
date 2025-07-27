@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/blender_helper/mesh_library/plugin.cfg", "res://addons/blender_helper/packed_scene/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
