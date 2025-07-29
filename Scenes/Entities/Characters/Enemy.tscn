@@ -12,10 +12,6 @@ collision_mask = 3
 wall_min_slide_angle = 0.0
 script = ExtResource("1_b12jw")
 
-[node name="RandomSpawn" type="Node3D" parent="."]
-script = ExtResource("2_an0ys")
-spawn_devhint = "EnemySpawnDev"
-
 [node name="NavAgent" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
 radius = 2.0
