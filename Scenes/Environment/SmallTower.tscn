@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bln6gessk1khq"]
-
-[ext_resource type="Script" uid="uid://c1w0nkvpfbq44" path="res://Scripts/tower.gd" id="1_d6h38"]
-
-[node name="Tower" type="CSGCylinder3D"]
-script = ExtResource("1_d6h38")

@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var nav_agent:NavigationAgent3D = $NavAgent
+
 @onready var model:Node3D = $Model
 
 var max_pursuit_distance:float = 5
@@ -24,6 +25,7 @@ var current_speed:float:
 
 var movement:Vector3
 func _ready() -> void:
+		
 	nav_agent.avoidance_enabled = true
 	wall_min_slide_angle = 0
 	main_tower = get_tree().get_first_node_in_group("MainTower")

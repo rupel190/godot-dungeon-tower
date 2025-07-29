@@ -305,7 +305,7 @@ wait_time = 0.2
 autostart = true
 
 [node name="Torch" type="OmniLight3D" parent="."]
-light_color = Color(0.217878, 0.217878, 0.217878, 1)
+light_color = Color(0.912121, 0.912121, 0.912121, 1)
 omni_range = 9.423
 script = ExtResource("5_epuhh")
 color_energy = SubResource("Gradient_otera")
