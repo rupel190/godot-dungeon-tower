@@ -24,9 +24,6 @@ class_name Player
 ## How quickly to zoom the camera
 @export var zoom_sensitivity: float = 0.4
 
-@export var spawn_pos = Vector3i.ZERO
-@export var map: Map
-
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -79,12 +76,8 @@ var zoom := min_zoom:
 @onready var jump_audio: AudioStreamPlayer3D = %JumpAudio
 @onready var run_audio: AudioStreamPlayer3D = %RunAudio
 
-
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
-	$RandomSpawn.gridmap = map
-	spawn_pos = $RandomSpawn._calc_random_spawn()
 	
 	# Whenever the player loads in, give the autoload ui a reference to itself.
 	UserInterface.update_player(self)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://wdpe58j12hix"]
+[gd_scene load_steps=14 format=3 uid="uid://wdpe58j12hix"]
 
 [ext_resource type="Script" uid="uid://cvhi47oskrh72" path="res://Scripts/environment/map.gd" id="1_oyb1s"]
 [ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Scenes/Entities/Characters/Player.tscn" id="2_wpat2"]
 [ext_resource type="PackedScene" uid="uid://bh7r6pbksrqak" path="res://Scenes/Entities/Characters/Enemy.tscn" id="3_6lvcu"]
+[ext_resource type="Script" uid="uid://uj0imua33jhy" path="res://Scripts/properties/has_random_spawn.gd" id="3_wpat2"]
 [ext_resource type="PackedScene" uid="uid://bln6gessk1khq" path="res://Scenes/Entities/Structures/SmallTower.tscn" id="4_8baqo"]
 [ext_resource type="MeshLibrary" uid="uid://ddj25eg343ud7" path="res://Assets/Data/MeshLibs/DungeonTiles.meshlib" id="5_mlxo0"]
 [ext_resource type="Script" uid="uid://2ka8htof3qff" path="res://Scripts/environment/kill_zone.gd" id="6_nr4ol"]
@@ -27,17 +28,26 @@ script = ExtResource("1_oyb1s")
 gridmap = NodePath("Navigation/GridMap")
 navmap = NodePath("Navigation")
 
-[node name="Player" parent="." node_paths=PackedStringArray("map") instance=ExtResource("2_wpat2")]
+[node name="Player" parent="." instance=ExtResource("2_wpat2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.15, 9)
-map = NodePath("..")
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("map") instance=ExtResource("3_6lvcu")]
+[node name="hasRandomSpawn" type="Node3D" parent="Player" node_paths=PackedStringArray("map")]
+script = ExtResource("3_wpat2")
+map = NodePath("../..")
+
+[node name="Enemy" parent="." instance=ExtResource("3_6lvcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
-map = NodePath("..")
 
-[node name="Tower" parent="." node_paths=PackedStringArray("map") instance=ExtResource("4_8baqo")]
+[node name="hasRandomSpawn" type="Node3D" parent="Enemy" node_paths=PackedStringArray("map")]
+script = ExtResource("3_wpat2")
+map = NodePath("../..")
+
+[node name="Tower" parent="." instance=ExtResource("4_8baqo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.29198, 12.2053)
-map = NodePath("..")
+
+[node name="hasRandomSpawn" type="Node3D" parent="Tower" node_paths=PackedStringArray("map")]
+script = ExtResource("3_wpat2")
+map = NodePath("../..")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.99999, -0.00435004, 3.46383e-06, 0, 0.000796274, 1, -0.00435005, -0.99999, 0.000796267, -2.73365, 55.5081, 1.3695)
