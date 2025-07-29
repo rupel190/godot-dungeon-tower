@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bln6gessk1khq"]
+
+[ext_resource type="Script" uid="uid://c1w0nkvpfbq44" path="res://Scripts/entities/structures/tower.gd" id="1_d6h38"]
+[ext_resource type="PackedScene" uid="uid://2fbfneufwmlm" path="res://Assets/Kotamade/SmallTower.blend" id="3_cnt63"]
+
+[node name="Tower" type="Node3D"]
+script = ExtResource("1_d6h38")
+
+[node name="SmallTower" parent="." instance=ExtResource("3_cnt63")]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
+light_energy = 2.0
+spot_range = 7.0
+spot_angle = 33.2735

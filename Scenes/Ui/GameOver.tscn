@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1bbsmventa0"]
+
+[ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="1_f2hw3"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gbevd"]
+action = &"ui_cancel"
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_ljjvh"]
+events = [SubResource("InputEventAction_gbevd")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ppig"]
+content_margin_left = 64.0
+content_margin_right = 64.0
+bg_color = Color(0.701961, 0.129412, 0.129412, 0.607843)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="GameOver" type="MarginContainer" groups=["Settings"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f2hw3")
+
+[node name="Hbox" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="Center" type="CenterContainer" parent="Hbox"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Hbox" type="HBoxContainer" parent="Hbox/Center"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 270
+
+[node name="Back" type="Button" parent="Hbox/Center/Hbox" node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+shortcut_context = NodePath("../../../..")
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_ljjvh")
+shortcut_in_tooltip = false
+text = "Back"
+
+[node name="Restart" type="Button" parent="Hbox/Center/Hbox" node_paths=PackedStringArray("shortcut_context")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+shortcut_context = NodePath("../../../..")
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_ljjvh")
+shortcut_in_tooltip = false
+text = "Restart"
+
+[node name="TitlePanel" type="PanelContainer" parent="Hbox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ppig")
+
+[node name="Title" type="Label" parent="Hbox/TitlePanel"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 150
+text = "Game over"
+
+[node name="Score" type="Label" parent="Hbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 71
+text = "Score"

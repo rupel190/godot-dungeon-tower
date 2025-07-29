@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctlcqvyq4y8y3"]
+
+[ext_resource type="PackedScene" uid="uid://q7rn0ispdnua" path="res://Assets/Kotamade/MainTower.blend" id="1_ybr6q"]
+
+[node name="MainTower" type="Node3D" groups=["MainTower"]]
+
+[node name="MainTower" parent="." instance=ExtResource("1_ybr6q")]
