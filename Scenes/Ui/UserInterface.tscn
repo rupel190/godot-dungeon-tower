@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck7ag4kyqmi2d" path="res://Scripts/autoload/userinterface.gd" id="1_pjpe8"]
 [ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="2_rwlv8"]
-[ext_resource type="Script" uid="uid://bxgr4f0bimrms" path="res://Scripts/ui/Reticle.gd" id="3_hfmys"]
+[ext_resource type="Script" uid="uid://bxgr4f0bimrms" path="res://Scripts/ui/reticle.gd" id="3_hfmys"]
 [ext_resource type="Script" uid="uid://c25w3uxyctk2h" path="res://Scripts/ui/timer_enemy.gd" id="4_co5mk"]
 [ext_resource type="Shader" uid="uid://wn6mnfchf1w7" path="res://Scenes/Ui/Theme/ScreenSpaceBlur.tres" id="4_kynqp"]
 [ext_resource type="Texture2D" uid="uid://h57ly05pumw6" path="res://Assets/Ui/Timer/burning_fuse_cord.png" id="5_apued"]
@@ -337,7 +337,7 @@ text = "[color=bd2424]WASD[/color][color=746c61]:[/color] move
 [color=9052a1]esc[/color][color=746c61]:[/color] pause"
 fit_content = true
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+[node name="TimerContainer" type="MarginContainer" parent="HUD"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -348,10 +348,11 @@ offset_bottom = 32.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 55
 
-[node name="CenterContainer" type="CenterContainer" parent="HUD/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HUD/TimerContainer"]
 layout_mode = 2
 
-[node name="EnemyTimer" type="AnimatedSprite2D" parent="HUD/MarginContainer/CenterContainer"]
+[node name="EnemyTimer" type="AnimatedSprite2D" parent="HUD/TimerContainer/CenterContainer"]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_tg74a")
 script = ExtResource("4_co5mk")
 

@@ -7,7 +7,7 @@ var timer: Timer
 func _ready():
 	timer = Timer.new()
 	timer.one_shot = true
-	timer.timeout.connect(_on_timer_timeout) # mui importando
+	timer.timeout.connect(_on_timer_timeout)
 	add_child(timer)
 	
 	self
@@ -17,6 +17,11 @@ func _ready():
 	var timer_speed_scale = _calc_animation_duration()/countdown_seconds 
 	timer.start(countdown_seconds)
 	play('default', timer_speed_scale)
+
+func reset():
+	stop()
+	timer.start(countdown_seconds)
+	play('default', _calc_animation_duration()/countdown_seconds )
 
 func _calc_animation_duration(): 
 	var animation_speed = speed_scale
@@ -30,7 +35,6 @@ func _calc_animation_duration():
 		var frame_duration = sprite_frames.get_frame_duration(anim_name, n) 
 		allframes_duration += frame_duration
 	return (allframes_duration / fps) * speed_scale
-	
 	
 func _on_timer_timeout():
 	print('Countdown finished!')

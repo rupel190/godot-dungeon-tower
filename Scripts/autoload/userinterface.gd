@@ -55,6 +55,8 @@ func hide_reticle(is_hidden:bool) -> void:
 	# Hide the aiming reticle. Useful for the third person camera.
 	reticle.visible = not is_hidden
 
+func reset_timer() -> void:
+	%EnemyTimer.reset()
 
 # Take an existing tween and add steps to fade the screen in.
 func fade_in(tween_in: Tween):
