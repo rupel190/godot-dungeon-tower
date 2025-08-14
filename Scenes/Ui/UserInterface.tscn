@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ck7ag4kyqmi2d" path="res://Scripts/autoload/userinterface.gd" id="1_pjpe8"]
 [ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="2_rwlv8"]
-[ext_resource type="Script" uid="uid://bxgr4f0bimrms" path="res://Scripts/ui/reticle.gd" id="3_hfmys"]
+[ext_resource type="Script" path="res://Scripts/ui/reticle.gd" id="3_hfmys"]
 [ext_resource type="Script" uid="uid://c25w3uxyctk2h" path="res://Scripts/ui/timer_enemy.gd" id="4_co5mk"]
 [ext_resource type="Shader" uid="uid://wn6mnfchf1w7" path="res://Scenes/Ui/Theme/ScreenSpaceBlur.tres" id="4_kynqp"]
 [ext_resource type="Texture2D" uid="uid://h57ly05pumw6" path="res://Assets/Ui/Timer/burning_fuse_cord.png" id="5_apued"]

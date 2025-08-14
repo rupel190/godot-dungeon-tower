@@ -1,5 +1,9 @@
-extends CharacterBody3D
 class_name Player
+extends CharacterBody3D
+
+signal died
+signal damaged
+@export var health: Health
 
 ## How fast the player moves on the ground.
 @export var base_speed := 6.0
@@ -78,7 +82,8 @@ var zoom := min_zoom:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	health.died.connect(died.emit)
+	health.damaged.connect(damaged.emit)
 	# Whenever the player loads in, give the autoload ui a reference to itself.
 	UserInterface.update_player(self)
 
