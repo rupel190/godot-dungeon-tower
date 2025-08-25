@@ -5,11 +5,7 @@ const MAZE_SCENE: PackedScene = preload("res://Scenes/Levels/Maze.tscn")
 signal gameover(score: String)
 signal restart()
 
-enum SpawnType {
-		PLAYER,
-		ENEMY,
-		TOWER
-}
+
 
 func _ready() -> void:
 	gameover.connect(_gameover)

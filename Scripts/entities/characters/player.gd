@@ -3,6 +3,8 @@ extends CharacterBody3D
 
 signal died
 signal damaged
+
+
 @export var health: Health
 
 ## How fast the player moves on the ground.
@@ -80,6 +82,8 @@ var zoom := min_zoom:
 @onready var jump_audio: AudioStreamPlayer3D = %JumpAudio
 @onready var run_audio: AudioStreamPlayer3D = %RunAudio
 
+@onready var staff = $Wooden_Staff
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	health.died.connect(died.emit)
@@ -108,6 +112,11 @@ func _physics_process(delta: float) -> void:
 		jump_particles.restart()
 		jump_audio.play()
 		run_audio.play()
+	
+	if Input.is_action_just_pressed("click"):
+		staff.cast()
+	if Input.is_action_pressed("click_right"):
+		staff.charge()
 	
 	# Handle movement.
 	var direction = get_movement_direction()

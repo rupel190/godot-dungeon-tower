@@ -229,7 +229,7 @@ floor_max_angle = 0.872665
 script = ExtResource("1_gc10f")
 
 [node name="Wooden_Staff" parent="." instance=ExtResource("2_46b6x")]
-transform = Transform3D(0.9526, 0.137548, -0.271355, -0.0275694, 0.927314, 0.373267, 0.302974, -0.348093, 0.887152, 0.566276, 0.441777, -0.515643)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.395462, 0.338628, -0.554664)
 
 [node name="BasePivot" type="Node3D" parent="."]
 transform = Transform3D(0.999403, -0.0341708, -0.00518501, 0.0345599, 0.989665, 0.139173, 0.000375782, -0.139269, 0.990255, 0, -1, 0)
@@ -309,7 +309,7 @@ wait_time = 0.2
 autostart = true
 
 [node name="Torch" type="OmniLight3D" parent="."]
-light_color = Color(0.378208, 0.378208, 0.378208, 1)
+light_color = Color(0.0393747, 0.0393747, 0.0393747, 1)
 omni_range = 9.423
 script = ExtResource("5_epuhh")
 color_energy = SubResource("Gradient_otera")
