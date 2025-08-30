@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		_atk_cooldown -= delta
 	elif is_instance_valid(attack_target):
 		var distance = global_position.distance_to(attack_target.global_position)
-		print("Enemy atk dist: ", distance)
+		#print("Enemy atk dist: ", distance)
 		if distance <= atk_range:
 			_attack()
 

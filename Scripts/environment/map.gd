@@ -24,9 +24,10 @@ var _spawn_name = {
 @onready var _tower = $Tower
 
 func _ready() -> void:
-	$Player.position = _spawn(SpawnType.PLAYER)
-	$Enemy.position = _spawn(SpawnType.ENEMY)
-	$Tower.position = _spawn(SpawnType.TOWER)
+	_player.position = _spawn(SpawnType.PLAYER)
+	_enemy.position = _spawn(SpawnType.ENEMY)
+	_tower.position = _spawn(SpawnType.TOWER)
+	_tower.position.y = 0
 	
 	_clear_gridmap_devhints(SpawnType.PLAYER)
 	_clear_gridmap_devhints(SpawnType.ENEMY)

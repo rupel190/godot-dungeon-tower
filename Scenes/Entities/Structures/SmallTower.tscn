@@ -9,11 +9,18 @@ script = ExtResource("1_d6h38")
 
 [node name="SmallTower" parent="." instance=ExtResource("3_cnt63")]
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
-light_energy = 2.0
-spot_range = 7.0
-spot_angle = 33.2735
+[node name="OmniLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.22327, 0)
+light_color = Color(1, 0.803922, 0.419608, 1)
+distance_fade_enabled = true
+omni_range = 89.376
+omni_attenuation = 1.8
+
+[node name="EnemyTunnelLeft" type="OmniLight3D" parent="OmniLight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3.67041, 40.0414)
+light_color = Color(0.441667, 0.156305, 0.905561, 1)
+light_energy = 2.371
+omni_range = 9.423
 
 [node name="SfxAttacked" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_2ulcq")

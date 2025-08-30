@@ -45,6 +45,7 @@ blend_shapes/EYES_CLOSE = 1.0
 
 [node name="AnimationPlayer" parent="Model" index="1"]
 autoplay = "Walk"
+speed_scale = 0.5
 
 [node name="SfxTakeDmg" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_ilxnf")
@@ -52,5 +53,10 @@ volume_db = -15.384
 
 [node name="SfxAttack" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_imnan")
+
+[node name="EnemyTunnelLeft" type="OmniLight3D" parent="."]
+light_color = Color(0.63, 0, 0.1575, 1)
+light_energy = 2.371
+omni_range = 4.166
 
 [editable path="Model"]
