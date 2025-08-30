@@ -38,8 +38,8 @@ folder_colors={
 
 [global_group]
 
-MainTower="The tower to be defended"
 Enemy=""
+SmallTower=""
 
 [input]
 

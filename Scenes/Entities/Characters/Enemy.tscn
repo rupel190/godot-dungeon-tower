@@ -1,15 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bh7r6pbksrqak"]
+[gd_scene load_steps=8 format=3 uid="uid://bh7r6pbksrqak"]
 
 [ext_resource type="Script" uid="uid://bbukiy2ug81qj" path="res://Scripts/entities/characters/enemy.gd" id="1_b12jw"]
+[ext_resource type="Script" uid="uid://declb4jx7jp1y" path="res://Scripts/properties/health.gd" id="2_imnan"]
 [ext_resource type="PackedScene" uid="uid://cc2dhpo4mej3x" path="res://Assets/Kotamade/Spook.blend" id="3_hgo82"]
+[ext_resource type="AudioStream" uid="uid://cnmvnku1vxi0o" path="res://Audio/VOCAL EVIL Growl Grunt 12.ogg" id="3_ilxnf"]
+[ext_resource type="AudioStream" uid="uid://0gkeltcq4fy" path="res://Audio/VOCAL EVIL Grunt Chomp 03.ogg" id="4_imnan"]
+
+[sub_resource type="Resource" id="Resource_bnpdr"]
+script = ExtResource("2_imnan")
+hp = 400
+metadata/_custom_type_script = "uid://declb4jx7jp1y"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b12jw"]
-radius = 0.7
+radius = 1.1
+height = 4.0
 
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 collision_mask = 3
+motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_b12jw")
+health = SubResource("Resource_bnpdr")
+move_speed = 1.5
 
 [node name="NavAgent" type="NavigationAgent3D" parent="."]
 avoidance_enabled = true
@@ -17,7 +29,7 @@ radius = 2.0
 debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.02)
 shape = SubResource("CapsuleShape3D_b12jw")
 
 [node name="Model" parent="." instance=ExtResource("3_hgo82")]
@@ -29,9 +41,16 @@ bones/2/rotation = Quaternion(0.0108086, -1.18973e-07, -0.0901445, 0.99587)
 bones/3/position = Vector3(-0.884876, 0.348665, -8.52289e-08)
 
 [node name="Spook" parent="Model/Armature/Skeleton3D" index="0"]
-blend_shapes/EYES_CLOSE = 0.51277
+blend_shapes/EYES_CLOSE = 1.0
 
 [node name="AnimationPlayer" parent="Model" index="1"]
 autoplay = "Walk"
+
+[node name="SfxTakeDmg" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ilxnf")
+volume_db = -15.384
+
+[node name="SfxAttack" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_imnan")
 
 [editable path="Model"]

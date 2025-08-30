@@ -23,3 +23,4 @@ func _restart():
 	UserInterface.reset_timer()
 	UserInterface.visible = true
 	#get_tree().change_scene_to_packed(MAZE_SCENE)
+	

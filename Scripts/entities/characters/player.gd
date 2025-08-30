@@ -4,7 +4,6 @@ extends CharacterBody3D
 signal died
 signal damaged
 
-
 @export var health: Health
 
 ## How fast the player moves on the ground.
@@ -81,6 +80,7 @@ var zoom := min_zoom:
 
 @onready var jump_audio: AudioStreamPlayer3D = %JumpAudio
 @onready var run_audio: AudioStreamPlayer3D = %RunAudio
+@onready var dmgd_audio: AudioStreamPlayer = $SfxDamaged
 
 @onready var staff = $Wooden_Staff
 
@@ -150,6 +150,11 @@ func frame_camera_rotation() -> void:
 	# Reset the _look variable so the same offset can't be reapplied.
 	_look = Vector2.ZERO
 
+func take_damage(amount: int) -> void:
+	print("player damaged for ", amount)
+	dmgd_audio.play()
+	UserInterface.flash_screen()
+	health.apply_damage(amount)
 
 # Blend the walking animation based on movement direction.
 func update_animation_tree() -> void:

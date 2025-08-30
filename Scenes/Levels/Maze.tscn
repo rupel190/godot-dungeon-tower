@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wdpe58j12hix"]
+[gd_scene load_steps=18 format=3 uid="uid://wdpe58j12hix"]
 
 [ext_resource type="Script" uid="uid://cvhi47oskrh72" path="res://Scripts/environment/map.gd" id="1_oyb1s"]
 [ext_resource type="PackedScene" uid="uid://vwr8ajoufse8" path="res://Scenes/Entities/Characters/Player.tscn" id="2_wpat2"]
@@ -12,12 +12,12 @@
 
 [sub_resource type="Resource" id="Resource_mlxo0"]
 script = ExtResource("3_8baqo")
-hp = 100
+hp = 300
 metadata/_custom_type_script = "uid://declb4jx7jp1y"
 
 [sub_resource type="Resource" id="Resource_6lvcu"]
 script = ExtResource("3_8baqo")
-hp = 100
+hp = 500
 metadata/_custom_type_script = "uid://declb4jx7jp1y"
 
 [sub_resource type="Resource" id="Resource_8baqo"]
@@ -38,6 +38,11 @@ plane = Plane(-1, 0, 0, 0)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_yjf5i"]
 
+[sub_resource type="Resource" id="Resource_wpat2"]
+script = ExtResource("3_8baqo")
+hp = 1000
+metadata/_custom_type_script = "uid://declb4jx7jp1y"
+
 [node name="Maze" type="Node3D" node_paths=PackedStringArray("gridmap", "navmap")]
 script = ExtResource("1_oyb1s")
 gridmap = NodePath("Navigation/GridMap")
@@ -46,12 +51,13 @@ navmap = NodePath("Navigation")
 [node name="Player" parent="." instance=ExtResource("2_wpat2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.15, 9)
 health = SubResource("Resource_mlxo0")
+jump_height = 2.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_6lvcu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
 health = SubResource("Resource_6lvcu")
 
-[node name="Tower" parent="." instance=ExtResource("4_8baqo")]
+[node name="Tower" parent="." groups=["Tower"] instance=ExtResource("4_8baqo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -0.29198, 12.2053)
 health = SubResource("Resource_8baqo")
 
@@ -130,6 +136,7 @@ shape = SubResource("WorldBoundaryShape3D_yjf5i")
 
 [node name="MainTower" parent="." instance=ExtResource("7_ifv58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+health = SubResource("Resource_wpat2")
 
 [node name="Lights" type="Node3D" parent="."]
 

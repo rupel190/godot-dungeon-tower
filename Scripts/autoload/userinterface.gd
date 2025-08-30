@@ -6,6 +6,8 @@ class_name UI
 @onready var settings_container: MarginContainer = %SettingsContainer
 @onready var resume_button: Button = %ResumeButton
 @onready var color_rect_fader: ColorRect = $ColorRectFader
+@onready var screen_flash: ColorRect = $ScreenFlash
+
 
 @onready var reticle: TextureRect = %Reticle
 
@@ -115,3 +117,8 @@ func restart_current_scene() -> void:
 		new_player.zoom = zoom
 		)
 	fade_in(tween)
+	
+func flash_screen():
+	screen_flash.modulate.a = 0.8
+	var tween = get_tree().create_tween()
+	tween.tween_property(screen_flash, "modulate:a", 0.0, 0.25).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)

@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://qjv24m4xo7vq"]
+[gd_scene load_steps=6 format=3 uid="uid://qjv24m4xo7vq"]
 
+[ext_resource type="Script" uid="uid://crcrvvftefati" path="res://Scripts/entities/weapon.gd" id="1_gumx8"]
 [ext_resource type="ArrayMesh" uid="uid://c2xq2ks6va1nd" path="res://Assets/ArcaneAccessories/Models/Wooden_Staff.Wooden_Staff.mesh" id="1_scvnl"]
 [ext_resource type="Material" uid="uid://cror71gal6ier" path="res://Assets/ArcaneAccessories/Materials/Palette-Colour.mat.tres" id="2_7dtya"]
+[ext_resource type="AudioStream" uid="uid://blpq1c1a15yhn" path="res://Audio/Whoosh Swipe C.wav" id="4_i1qr0"]
 
-[node name="Wooden_Staff" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gumx8"]
+radius = 0.4
+height = 0.8
+
+[node name="Wooden_Staff" type="Area3D"]
+script = ExtResource("1_gumx8")
 
 [node name="MeshRenderer" type="MeshInstance3D" parent="."]
 editor_description = "[MeshRenderer 23::20584a641e09a42479139ec1d1053348:6566464306808110158]"
@@ -51,3 +58,13 @@ metadata/unidot_keys = {
 "m_StaticShadowCaster": 0,
 "m_StitchLightmapSeams": 1
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.31, -0.10032)
+shape = SubResource("CapsuleShape3D_gumx8")
+
+[node name="AudioWhoosh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_i1qr0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
