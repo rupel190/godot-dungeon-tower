@@ -1,16 +1,14 @@
 extends Node3D
 class_name Tower
 
-signal damaged
-signal died
 @export var health: Health
+@export var is_main = false
 
 @onready var _sfx_attacked = $SfxAttacked
-@onready var light = $OmniLight
+@onready var _light = $OmniLight
+
 
 func _ready() -> void:
-	health.damaged.connect(damaged.emit)
-	health.died.connect(died.emit)
 	health.died.connect(_on_destroyed)
 
 func take_damage(dmg: int):
@@ -19,6 +17,7 @@ func take_damage(dmg: int):
 	print(self.name, " damaged for: ", dmg, " . Remaining: ", health)
 
 func _on_destroyed():
+	SignalBus.tower_destroyed.emit(self)
 	print("Tower destroyed. Lights out.")
-	light.queue_free()
+	_light.queue_free()
 	

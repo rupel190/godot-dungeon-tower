@@ -31,6 +31,7 @@ debug_enabled = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.02)
 shape = SubResource("CapsuleShape3D_b12jw")
+debug_color = Color(0, 0.595, 0.7, 0.780392)
 
 [node name="Model" parent="." instance=ExtResource("3_hgo82")]
 

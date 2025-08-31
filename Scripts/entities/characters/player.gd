@@ -115,8 +115,8 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("click"):
 		staff.cast()
-	if Input.is_action_pressed("click_right"):
-		staff.charge()
+	#if Input.is_action_pressed("click_right"):
+		#staff.charge()
 	
 	# Handle movement.
 	var direction = get_movement_direction()

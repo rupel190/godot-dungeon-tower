@@ -1,21 +1,21 @@
 [gd_scene load_steps=6 format=3 uid="uid://qjv24m4xo7vq"]
 
-[ext_resource type="Script" uid="uid://crcrvvftefati" path="res://Scripts/entities/weapon.gd" id="1_gumx8"]
-[ext_resource type="ArrayMesh" uid="uid://c2xq2ks6va1nd" path="res://Assets/ArcaneAccessories/Models/Wooden_Staff.Wooden_Staff.mesh" id="1_scvnl"]
-[ext_resource type="Material" uid="uid://cror71gal6ier" path="res://Assets/ArcaneAccessories/Materials/Palette-Colour.mat.tres" id="2_7dtya"]
-[ext_resource type="AudioStream" uid="uid://blpq1c1a15yhn" path="res://Audio/Whoosh Swipe C.wav" id="4_i1qr0"]
+[ext_resource type="Script" uid="uid://crcrvvftefati" path="res://Scripts/entities/weapon.gd" id="1_x64jw"]
+[ext_resource type="ArrayMesh" uid="uid://c2xq2ks6va1nd" path="res://Assets/ArcaneAccessories/Models/Wooden_Staff.Wooden_Staff.mesh" id="2_cns51"]
+[ext_resource type="Material" uid="uid://cror71gal6ier" path="res://Assets/ArcaneAccessories/Materials/Palette-Colour.mat.tres" id="3_tr3x7"]
+[ext_resource type="AudioStream" uid="uid://blpq1c1a15yhn" path="res://Audio/Whoosh Swipe C.wav" id="4_oc20o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gumx8"]
-radius = 0.4
-height = 0.8
+radius = 0.6
+height = 1.65198
 
 [node name="Wooden_Staff" type="Area3D"]
-script = ExtResource("1_gumx8")
+script = ExtResource("1_x64jw")
 
 [node name="MeshRenderer" type="MeshInstance3D" parent="."]
 editor_description = "[MeshRenderer 23::20584a641e09a42479139ec1d1053348:6566464306808110158]"
-mesh = ExtResource("1_scvnl")
-surface_material_override/0 = ExtResource("2_7dtya")
+mesh = ExtResource("2_cns51")
+surface_material_override/0 = ExtResource("3_tr3x7")
 metadata/unidot_keys = {
 "m_AdditionalVertexStreams": [null, 0, null, null],
 "m_AutoUVMaxAngle": 89,
@@ -60,11 +60,12 @@ metadata/unidot_keys = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.31, -0.10032)
+transform = Transform3D(1, 0, 0, 0, 0.999912, -0.0132816, 0, 0.0132816, 0.999912, 0, -0.00615251, -0.39988)
 shape = SubResource("CapsuleShape3D_gumx8")
+debug_color = Color(0, 0.595, 0.7, 0.788235)
 
 [node name="AudioWhoosh" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_i1qr0")
+stream = ExtResource("4_oc20o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,11 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bln6gessk1khq"]
+[gd_scene load_steps=6 format=3 uid="uid://bln6gessk1khq"]
 
 [ext_resource type="Script" uid="uid://c1w0nkvpfbq44" path="res://Scripts/entities/structures/tower.gd" id="1_d6h38"]
+[ext_resource type="Script" uid="uid://declb4jx7jp1y" path="res://Scripts/properties/health.gd" id="2_2ulcq"]
 [ext_resource type="AudioStream" uid="uid://b2ago8yeeyvw5" path="res://Audio/IMPACT Bang Hit 01.ogg" id="3_2ulcq"]
 [ext_resource type="PackedScene" uid="uid://2fbfneufwmlm" path="res://Assets/Kotamade/SmallTower.blend" id="3_cnt63"]
 
+[sub_resource type="Resource" id="Resource_ew17v"]
+script = ExtResource("2_2ulcq")
+hp = 500
+metadata/_custom_type_script = "uid://declb4jx7jp1y"
+
 [node name="Tower" type="Node3D" groups=["SmallTower"]]
 script = ExtResource("1_d6h38")
+health = SubResource("Resource_ew17v")
 
 [node name="SmallTower" parent="." instance=ExtResource("3_cnt63")]
 

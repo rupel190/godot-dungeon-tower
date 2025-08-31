@@ -7,7 +7,8 @@ class_name UI
 @onready var resume_button: Button = %ResumeButton
 @onready var color_rect_fader: ColorRect = $ColorRectFader
 @onready var screen_flash: ColorRect = $ScreenFlash
-
+@onready var notification: Label = %PlayerNotifications
+@onready var sfx_notification: AudioStreamPlayer = %SfxNotification
 
 @onready var reticle: TextureRect = %Reticle
 
@@ -52,6 +53,12 @@ func _on_settings_container_exit() -> void:
 	pause_container.visible = true
 	settings_container.visible = false
 	resume_button.grab_focus()
+	
+func notify(text: String):
+	notification.text = text
+	notification.self_modulate.a = 1
+	var tween = get_tree().create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(notification, "self_modulate:a", 0.0, 2.5).set_trans(Tween.TRANS_LINEAR)
 	
 func hide_reticle(is_hidden:bool) -> void:
 	# Hide the aiming reticle. Useful for the third person camera.

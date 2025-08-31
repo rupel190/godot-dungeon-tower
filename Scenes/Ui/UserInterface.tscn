@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b4mrqfvtlycnc"]
+[gd_scene load_steps=46 format=3 uid="uid://b4mrqfvtlycnc"]
 
 [ext_resource type="Script" uid="uid://ck7ag4kyqmi2d" path="res://Scripts/autoload/userinterface.gd" id="1_pjpe8"]
 [ext_resource type="Theme" uid="uid://bq6qbvmwxf5gm" path="res://Scenes/Ui/Theme/UITheme.tres" id="2_rwlv8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://wn6mnfchf1w7" path="res://Scenes/Ui/Theme/ScreenSpaceBlur.tres" id="4_kynqp"]
 [ext_resource type="Texture2D" uid="uid://h57ly05pumw6" path="res://Assets/Ui/Timer/burning_fuse_cord.png" id="5_apued"]
 [ext_resource type="PackedScene" uid="uid://sbl4rscivr8g" path="res://Scenes/Ui/SettingsContainer.tscn" id="5_qrem4"]
+[ext_resource type="AudioStream" uid="uid://chvv6u2v4mrlg" path="res://Audio/Objects - Alarm 001.wav" id="6_jnvb3"]
 
 [sub_resource type="GDScript" id="GDScript_ivi4s"]
 script/source = "extends MarginContainer
@@ -355,6 +356,27 @@ layout_mode = 2
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_tg74a")
 script = ExtResource("4_co5mk")
+
+[node name="MarginNotifications" type="MarginContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -475.0
+offset_right = 475.0
+offset_bottom = 193.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 125
+
+[node name="PlayerNotifications" type="Label" parent="HUD/MarginNotifications"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+horizontal_alignment = 1
+
+[node name="SfxNotification" type="AudioStreamPlayer" parent="HUD/MarginNotifications"]
+unique_name_in_owner = true
+stream = ExtResource("6_jnvb3")
 
 [node name="PauseScreen" type="Control" parent="."]
 process_mode = 3

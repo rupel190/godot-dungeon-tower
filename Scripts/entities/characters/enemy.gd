@@ -38,7 +38,7 @@ var aggro_target: Node3D = null
 
 func _ready() -> void:
 	health.damaged.connect(damaged.emit)
-	health.died.connect(died.emit)
+	health.died.connect(SignalBus.enemy_destroyed.emit)
 	nav_agent.avoidance_enabled = true
 	wall_min_slide_angle = 0
 	update_target()
