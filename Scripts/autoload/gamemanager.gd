@@ -51,5 +51,4 @@ func _on_enemy_spawned():
 func _on_enemy_destroyed():
 	active_enemies -= 1
 	print("Remaining enemies: ", active_enemies)
-	UserInterface.notify("An enemy has been destroyed!")
 	

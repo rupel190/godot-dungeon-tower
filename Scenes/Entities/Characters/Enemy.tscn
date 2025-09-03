@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh7r6pbksrqak"]
+[gd_scene load_steps=9 format=3 uid="uid://bh7r6pbksrqak"]
 
 [ext_resource type="Script" uid="uid://bbukiy2ug81qj" path="res://Scripts/entities/characters/enemy.gd" id="1_b12jw"]
 [ext_resource type="Script" uid="uid://declb4jx7jp1y" path="res://Scripts/properties/health.gd" id="2_imnan"]
@@ -15,7 +15,12 @@ metadata/_custom_type_script = "uid://declb4jx7jp1y"
 radius = 1.1
 height = 4.0
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_imnan"]
+radius = 2.0
+height = 6.0
+
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
+collision_layer = 2
 collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
@@ -32,6 +37,15 @@ debug_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.02)
 shape = SubResource("CapsuleShape3D_b12jw")
 debug_color = Color(0, 0.595, 0.7, 0.780392)
+
+[node name="AttackArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29482, 0)
+collision_layer = 2
+collision_mask = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("CapsuleShape3D_imnan")
+debug_color = Color(0.843484, 0.325339, 0.514653, 0.42)
 
 [node name="Model" parent="." instance=ExtResource("3_hgo82")]
 

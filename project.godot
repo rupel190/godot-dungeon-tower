@@ -100,6 +100,13 @@ click_right={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="world"
+3d_physics/layer_2="enemies"
+3d_physics/layer_3="towers"
+3d_physics/layer_4="players"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
