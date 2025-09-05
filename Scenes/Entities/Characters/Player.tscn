@@ -226,6 +226,7 @@ offsets = PackedFloat32Array(0, 0.189655, 0.270115, 0.356322, 0.465517, 0.557471
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.47788, 0.47788, 0.47788, 1, 0.259294, 0.259294, 0.259294, 1, 0.931035, 0.931035, 0.931035, 1, 0.259294, 0.259294, 0.259294, 1, 0, 0, 0, 1, 1, 1, 1, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 9
 floor_max_angle = 0.872665
 script = ExtResource("1_gc10f")
 
@@ -310,7 +311,7 @@ wait_time = 0.2
 autostart = true
 
 [node name="Torch" type="OmniLight3D" parent="."]
-light_color = Color(0.438125, 0.438125, 0.438125, 1)
+light_color = Color(0.806666, 0.806666, 0.806666, 1)
 omni_range = 9.423
 script = ExtResource("5_epuhh")
 color_energy = SubResource("Gradient_otera")

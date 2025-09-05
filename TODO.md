@@ -9,5 +9,5 @@
 - [ ] Multiple Waves while retaining the level (which gets increasingly darker) -> out of scope
 
 - [ ] Tune lights
-- [ ] Fix damage mechanics
+- [x] Fix damage mechanics
 - [ ] Fix pathfinding

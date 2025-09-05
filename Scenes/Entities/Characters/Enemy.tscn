@@ -38,12 +38,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0.02)
 shape = SubResource("CapsuleShape3D_b12jw")
 debug_color = Color(0, 0.595, 0.7, 0.780392)
 
-[node name="AttackArea" type="Area3D" parent="."]
+[node name="AttackRange" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29482, 0)
 collision_layer = 2
 collision_mask = 12
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackRange"]
 shape = SubResource("CapsuleShape3D_imnan")
 debug_color = Color(0.843484, 0.325339, 0.514653, 0.42)
 
@@ -73,5 +73,7 @@ stream = ExtResource("4_imnan")
 light_color = Color(0.63, 0, 0.1575, 1)
 light_energy = 2.371
 omni_range = 4.166
+
+[node name="AtkCharge" type="Timer" parent="."]
 
 [editable path="Model"]
